@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
+
+android {
+    namespace 'com.theroyalpetals'
+    compileSdkVersion 36
+
+    defaultConfig {
+        applicationId "com.theroyalpetals"
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0.0"
+
+        manifestPlaceholders = [appAuthRedirectScheme: "com.theroyalpetals.auth"]
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true         // Must be true for shrinkResources
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+flutter {
+    source '../..'
+}
