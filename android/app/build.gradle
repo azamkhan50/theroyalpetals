@@ -12,8 +12,9 @@ android {
         targetSdkVersion 36
         versionCode 1
         versionName "1.0.0"
-
-        manifestPlaceholders = [appAuthRedirectScheme: "com.theroyalpetals.auth"]
+        manifestPlaceholders = [appAuthRedirectScheme: "shop.81516691692.app"]
+      // manifestPlaceholders = [appAuthRedirectScheme: "com.theroyalpetals"]
+       // manifestPlaceholders = [appAuthRedirectScheme: "com.theroyalpetals.auth"]
     }
 
     buildTypes {

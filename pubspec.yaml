@@ -39,7 +39,10 @@ dependencies:
   shopify_flutter: ^2.6.2
   shared_preferences: ^2.5.5
   url_launcher: ^6.3.2
-  flutter_appauth: ^6.0.7
+  google_fonts: ^8.0.2
+  cached_network_image: ^3.4.0
+  jwt_decoder: ^2.0.1
+  flutter_appauth: 
 
 dev_dependencies:
   flutter_test:

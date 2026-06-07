@@ -28,13 +28,21 @@ class FavoritesManager {
   static bool isFavorite(Product product) {
     return favoriteProducts.any((p) => p.id == product.id);
   }
-
-  static void toggleFavorite(Product product) {
-    if (isFavorite(product)) {
-      favoriteProducts.removeWhere((p) => p.id == product.id);
-    } else {
-      favoriteProducts.add(product);
-    }
-    _saveToStorage(); // Save every time someone clicks the heart
+static void toggleFavorite(Product product) {
+  // Use product.id to compare because object instances might change
+  if (isFavorite(product)) {
+    favoriteProducts.removeWhere((p) => p.id == product.id);
+  } else {
+    favoriteProducts.add(product);
   }
+  _saveToStorage(); 
+}
+  // static void toggleFavorite(Product product) {
+  //   if (isFavorite(product)) {
+  //     favoriteProducts.removeWhere((p) => p.id == product.id);
+  //   } else {
+  //     favoriteProducts.add(product);
+  //   }
+  //   _saveToStorage(); // Save every time someone clicks the heart
+  // }
 }
